@@ -1,3 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #312;
+    color: #d63384;
+    overflow: hidden;
+    margin: 0;
+}
+
 canvas {
-  background-color:#312;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    margin-top: 20%;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#yes {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background-color: #ffffff;
+    color: #ff4d6d;
+    border: 2px solid #ff4d6d;
+}
+
+#no:hover {
+    position: absolute;
+    top: calc(50% + (Math.random() * 200px - 100px));
+    left: calc(50% + (Math.random() * 200px - 100px));
 }
