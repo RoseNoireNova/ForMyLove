@@ -3,6 +3,27 @@ var stage;
 var container;
 var captureContainers;
 var captureIndex;
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+        height: '0',
+        width: '0',
+        videoId: '5v4yK2Ae9Sw', 
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: '5v4yK2Ae9Sw'
+        },
+        events: {
+            'onReady': function(event) {
+                event.target.setVolume(50);
+                event.target.playVideo();
+            }
+        }
+    });
+}
+
 
 function init() {
     canvas = document.getElementById("testCanvas");
@@ -89,4 +110,3 @@ document.getElementById("no").addEventListener("mouseover", function() {
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
 });
-
