@@ -9,11 +9,11 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('youtube-player', {
         height: '0',
         width: '0',
-        videoId: '5v4yK2Ae9Sw', 
+        videoId: 'ZMBv_6UWq-o', 
         playerVars: {
             autoplay: 1,
             loop: 1,
-            playlist: '5v4yK2Ae9Sw'
+            playlist: 'ZMBv_6UWq-o'
         },
         events: {
             'onReady': function(event) {
@@ -23,7 +23,6 @@ function onYouTubeIframeAPIReady() {
         }
     });
 }
-
 
 function init() {
     canvas = document.getElementById("testCanvas");
@@ -99,7 +98,14 @@ init();
 
 // Lógica de los botones
 document.getElementById("yes").addEventListener("click", function() {
-    document.getElementById("response").innerText = "¡Sabía que dirías que sí! ❤️ Nos vemos el 14.";
+    let container = document.querySelector(".container");
+    container.style.display = "none"; // Ocultar mensaje anterior
+    
+    if (player && player.playVideo) {
+        player.playVideo();
+    }
+    
+    showInvitationDetails();
 });
 
 document.getElementById("no").addEventListener("mouseover", function() {
@@ -110,3 +116,22 @@ document.getElementById("no").addEventListener("mouseover", function() {
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
 });
+
+function showInvitationDetails() {
+    let card = document.createElement("div");
+    card.classList.add("invitation-card");
+    card.innerHTML = `
+        <div class="heart-image"></div>
+        <h2>¿Qué recibes al aceptar esta invitación?</h2>
+        <ul>
+            <li>❤️ Muchos besos.</li>
+            <li>🍔 Mucha comida.</li>
+            <li>🎁 Sorpresas.</li>
+            <li>🎮 Juegos.</li>
+            <li>🏍️ Paseo en moto por Medellín.</li>
+            <li>Día y Hora: Viernes 14 de Febrero 7:30 p.m. </li>
+            <li>Lugar: Déjate llevar. </li>
+        </ul>
+    `;
+    document.body.appendChild(card);
+}
