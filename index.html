@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -10,14 +11,28 @@
 </head>
 <body>
     <canvas id="testCanvas"></canvas>
-    <div class="container">
-        <h1>¿Quieres salir conmigo este 14 de febrero? ❤️</h1>
+    <div class="container" id="question-container">
+        <h1>¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="buttons">
             <button id="yes">Sí</button>
             <button id="no">No</button>
         </div>
         <p id="response"></p>
     </div>
+    
+    <!-- Tarjeta oculta por defecto -->
+    <div class="invitation-card" id="invitation-card" style="display: none;">
+        <div class="heart-image"></div>
+        <h2>¿Qué recibes al aceptar esta invitación?</h2>
+        <ul>
+            <li>❤️ Muchos besos.</li>
+            <li>🍔 Mucha comida.</li>
+            <li>🎁 Sorpresas.</li>
+            <li>🎮 Juegos.</li>
+            <li>🏍️ Paseo en moto por Medellín.</li>
+        </ul>
+    </div>
+    
     <div id="youtube-player"></div>
     <script src="script.js"></script>
 </body>
