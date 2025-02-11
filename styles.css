@@ -20,6 +20,7 @@ canvas {
     position: relative;
     z-index: 1;
     margin-top: 20%;
+    transition: opacity 0.5s ease-in-out;
 }
 
 button {
@@ -29,11 +30,16 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 #yes {
     background-color: #ff4d6d;
     color: white;
+}
+
+#yes:hover {
+    background-color: #ff1e4d;
 }
 
 #no {
@@ -46,4 +52,62 @@ button {
     position: absolute;
     top: calc(50% + (Math.random() * 200px - 100px));
     left: calc(50% + (Math.random() * 200px - 100px));
+}
+
+.hidden {
+    display: none;
+}
+
+.invitation-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 10;
+    width: 350px;
+    color: #312;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+.invitation-card h2 {
+    color: #ff4d6d;
+    margin-bottom: 15px;
+}
+
+.invitation-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.invitation-card li {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.heart-image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 15px;
+    background-image: url('Collage.png'); 
+    background-size: cover;
+    background-position: center;
+    border-radius: 0%;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
